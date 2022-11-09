@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
+    <div class="content">
     <header id="header">
       <img src="../../static/images/samplelogo.png" id="logo">
-      <h1 id="h1_header">サイト名</h1>
+      <h1 id="h1_header"><i>Teachers class revolution</i></h1>
     </header>
     <h2 id="page_name">条件を選択</h2>
     <form action="{% url 'search' %}" method="post" id="search_field">
       {% csrf_token %}
       <table>
         <tr>
-          <td class="search_title"><font size="4"><b>学校区分</b></font></td>
+          <td class="search_title"><p class="search_detail"><font size="4"><b>学校</b></font></p></td>
           <td class="search_condition">
             <input type="radio" name="schoolInput" value="" style="transform:scale(1.2)" checked><font size="4">指定なし</font>
             <input type="radio" name="schoolInput" value="element" style="transform:scale(1.2)"><font size="4">小学校</font>
@@ -24,7 +25,7 @@
           </td>
         </tr>
         <tr>
-          <td class="search_title"><font size="4"><b>科目</b></font></td>
+          <td class="search_title"><p class="search_detail_img"><img src="../../static/images/subject.png" class="search_logo"></p><p class="search_detail"><font size="4"><b>科目</b></font></p></td>
           <td class="search_condition">
             <input type="radio" name="subjectInput" value="japanese" style="transform:scale(1.2)" checked><font size="4">国語</font>
             <input type="radio" name="subjectInput" value="math" style="transform:scale(1.2)"><font size="4">算数</font>
@@ -34,7 +35,7 @@
           </td>
         </tr>
         <tr>
-          <td class="search_title"><font size="4"><b>金額</b></font></td>
+          <td class="search_title"><p class="search_detail_img"><img src="../../static/images/money.png" class="search_logo"></p><p class="search_detail"><font size="4"><b>料金</b></font></p></td>
           <td class="search_condition">
             <p>
               <input type="radio" name="moneyInput" value="100000" style="transform:scale(1.2)" checked><font size="4">指定なし</font>
@@ -44,7 +45,7 @@
           </td>
         </tr>
         <tr>
-          <td class="search_title"><font size="4"><b>アプリ評価</b></font></td>
+          <td class="search_title"><p class="search_detail_img"><img src="../../static/images/value.png" class="search_logo"></p><p class="search_detail"><font size="4"><b>評価</b></font></p></td>
           <td class="search_condition">
             <input type="radio" name="valueInput" value = "0" style="transform:scale(1.2)" checked><font size="4">指定なし</font>
             <input type="radio" name="valueInput" value = "2" style="transform:scale(1.2)"><font size="4">2以上</font>
@@ -53,7 +54,7 @@
           </td>
         </tr>
         <tr>
-          <td class="search_title"><font size="4"><b>対応機種</b></font></td>
+          <td class="search_title"><p class="search_detail_img"><img src="../../static/images/machine.png" class="search_logo"></p><p class="search_detail"><font size="4"><b>機種</b></font></p></td>
           <td class="search_condition">
             <input type="radio" name="machineInput" value="" style="transform:scale(1.2)" checked><font size="4">指定なし</font>
             <input type="radio" name="machineInput" value="iOS" style="transform:scale(1.2)"><font size="4">iOS</font>
@@ -65,5 +66,11 @@
         <button type="submit" class="btn">絞り込み</button>
       </div>
     </form>
+    </div>
+    <footer class="contact">
+      <p id="contact_state">
+        おすすめのアプリがあれば s1f102002840@iniad.org まで
+      </p>
+    </footer>
   </body>
 </html>

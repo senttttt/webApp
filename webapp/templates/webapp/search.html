@@ -6,24 +6,37 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
   <body>
+    <div class="content">
+    <a href="../webapp">
     <header id="header">
       <img src="../../static/images/samplelogo.png" id="logo">
-      <h1 id="h1_header">サイト名</h1>
+      <h1 id="h1_header"><i>Teachers class revolution</i></h1>
     </header>
+    </a>
     <h2 id="page_name">検索結果</h2>
     <table id="search">
       <tbody>
         {% for app in app %}
           <tr>
-              <td id="img"><img src="{{app.images}}" alt="" width="100" height="100"/></td>
+              <td id="img"><img src="{{app.images}}" alt="" width="80" height="80"/></td>
               <td id="content">
                 <p id="app_name"><a href="{{app.link}}" target="_blank" rel="noreferrer noopener">{{app.app_name}}</a></p>
                 <p id="detail">{{app.detail}}</p>
+              </td>
+              <td id="information">
+                <p class="detail">{{app.money}} 円</p>
+                <p class="detail">{{app.value}} <span class="star-rating" data-rate="{{app.value}}"></span></p>
               </td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
     <div class="button"><a href="../webapp" class="btn">検索画面へ</a></div>
+    </div>
+    <footer class="contact">
+      <p id="contact_state">
+        おすすめのアプリがあれば s1f102002840@iniad.org まで
+      </p>
+    </footer>
   </body>
 </html>
